@@ -14,7 +14,7 @@ export default function GetSingleUser() {
   const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    fetch(`http://localhost:8080/users/${id}`)
+    fetch(`${apiUrl}/users/${id}`)
       .then((response) => response.json())
       .then((data) =>
         setUser({
