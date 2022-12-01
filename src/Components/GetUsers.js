@@ -20,17 +20,19 @@ export default function GetUsers() {
   };
   return (
     <div>
-      <Link to="/">
-        <button>Back to Overview</button>
-      </Link>
-      <button onClick={fetchUsers}> Get All Users</button>
-      {users.map((user) => {
-        return (
-          <Link key={user.id} to={`/users/${user.id}`}>
-            <p>{user.first_name}</p>
-          </Link>
-        );
-      })}
+      <header>
+        <Link to="/">
+          <button>Back to Overview</button>
+        </Link>
+        <button onClick={fetchUsers}> Get All Users</button>
+        {users.map((user) => {
+          return (
+            <Link key={user.id} to={`/users/${user.id}`}>
+              <p>{user.first_name}</p>
+            </Link>
+          );
+        })}
+      </header>
     </div>
   );
 }

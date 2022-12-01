@@ -16,13 +16,15 @@ export default function GetOrders() {
   };
   return (
     <div>
-      <Link to="/">
-        <button>Back to Overview</button>
-      </Link>
-      <button onClick={getAllOrders}>Get All Oders</button>
-      {orders.map((order) => (
-        <p key={order.id}>{order.id}</p>
-      ))}
+      <header>
+        <Link to="/">
+          <button>Back to Overview</button>
+        </Link>
+        <button onClick={getAllOrders}>Get All Oders</button>
+        {orders.map((order) => (
+          <p key={order.id}>{order.id}</p>
+        ))}
+      </header>
     </div>
   );
 }

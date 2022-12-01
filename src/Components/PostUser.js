@@ -34,28 +34,34 @@ export default function PostUser() {
 
   return (
     <div>
-      <form onSubmit={createUser}>
-        <label id="firstName">First Name</label>
-        <input id="firstName" type="text" placeholder="First Name" />
-        <label id="lastName"> Last Name</label>
-        <input id="lastName" type="text" placeholder="Last Name" />
-        <label id="age"> Age</label>
-        <input id="age" type="number" placeholder="Age" />
-        <button type="submit"> Create User</button>
-      </form>
-      <Link to="/">
-        <button>Back to Overview</button>
-      </Link>
-      {createdUser.active ? (
+      <header>
         <div>
-          <h3>User Successfully Created</h3>
-          <p>
-            Welcome {createdUser.firstName} {createdUser.lastName}
-          </p>
+          <form className="inputField" onSubmit={createUser}>
+            <label id="firstName">First Name</label>
+            <input id="firstName" type="text" placeholder="First Name" />
+            <label id="lastName"> Last Name</label>
+            <input id="lastName" type="text" placeholder="Last Name" />
+            <label id="age"> Age</label>
+            <input id="age" type="number" placeholder="Age" />
+            <button type="submit"> Create User</button>
+          </form>
         </div>
-      ) : (
-        ""
-      )}
+        <div>
+          <Link to="/">
+            <button>Back to Overview</button>
+          </Link>
+          {createdUser.active ? (
+            <div>
+              <h3>User Successfully Created</h3>
+              <p>
+                Welcome {createdUser.firstName} {createdUser.lastName}
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      </header>
     </div>
   );
 }

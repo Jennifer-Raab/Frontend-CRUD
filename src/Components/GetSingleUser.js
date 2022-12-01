@@ -52,74 +52,76 @@ export default function GetSingleUser() {
   };
   return (
     <div>
-      {user && (
-        <h1>
-          {user.firstName} {user.lastName}
-        </h1>
-      )}
-      <Link to="/">
-        <button>Back to Overview</button>
-      </Link>
-      <Link to="/users">
-        <button>Back to All Users</button>
-      </Link>
+      <header>
+        {user && (
+          <h1>
+            {user.firstName} {user.lastName}
+          </h1>
+        )}
+        <Link to="/">
+          <button>Back to Overview</button>
+        </Link>
+        <Link to="/users">
+          <button>Back to All Users</button>
+        </Link>
 
-      {edit ? (
-        <form onSubmit={handleEdit}>
-          <label>
-            First Name
-            <input
-              type="text"
-              value={user.firstName}
-              onChange={(e) => {
-                setUser({
-                  firstName: e.target.value,
-                  lastName: user.lastName,
-                  age: user.age,
-                });
-              }}
-            />
-          </label>
-          <label>
-            Last Name
-            <input
-              type="text"
-              value={user.lastName}
-              onChange={(e) => {
-                setUser({
-                  firstName: user.firstName,
-                  lastName: e.target.value,
-                  age: user.age,
-                });
-              }}
-            />
-          </label>
-          <label>
-            Age
-            <input
-              type="number"
-              value={user.age}
-              onChange={(e) => {
-                setUser({
-                  firstName: user.firstName,
-                  lastName: user.lastName,
-                  age: e.target.value,
-                });
-              }}
-            />
-          </label>
-          <button type="submit">Submit Changes</button>
-        </form>
-      ) : (
-        <button
-          onClick={() => {
-            setEdit(true);
-          }}
-        >
-          Edit Personal Data
-        </button>
-      )}
-      <DeleteSingleUser />
+        {edit ? (
+          <form onSubmit={handleEdit}>
+            <label>
+              First Name
+              <input
+                type="text"
+                value={user.firstName}
+                onChange={(e) => {
+                  setUser({
+                    firstName: e.target.value,
+                    lastName: user.lastName,
+                    age: user.age,
+                  });
+                }}
+              />
+            </label>
+            <label>
+              Last Name
+              <input
+                type="text"
+                value={user.lastName}
+                onChange={(e) => {
+                  setUser({
+                    firstName: user.firstName,
+                    lastName: e.target.value,
+                    age: user.age,
+                  });
+                }}
+              />
+            </label>
+            <label>
+              Age
+              <input
+                type="number"
+                value={user.age}
+                onChange={(e) => {
+                  setUser({
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    age: e.target.value,
+                  });
+                }}
+              />
+            </label>
+            <button type="submit">Submit Changes</button>
+          </form>
+        ) : (
+          <button
+            onClick={() => {
+              setEdit(true);
+            }}
+          >
+            Edit Personal Data
+          </button>
+        )}
+        <DeleteSingleUser />
+      </header>
     </div>
   );
 }

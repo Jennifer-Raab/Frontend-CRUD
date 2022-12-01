@@ -28,8 +28,10 @@ export default function DeleteSingleUser() {
 
   return (
     <div>
-      <button onClick={handleDelete}>Delete Single User</button>
-      {deleteSuccess ? <p>User Successfully Deleted!</p> : ""}
+      <header>
+        <button onClick={handleDelete}>Delete Single User</button>
+        {deleteSuccess ? <p>User Successfully Deleted!</p> : ""}
+      </header>
     </div>
   );
 }
